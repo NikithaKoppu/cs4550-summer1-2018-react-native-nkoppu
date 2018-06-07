@@ -4,14 +4,15 @@ import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage}
     from 'react-native-elements'
 
-class EssayQuestionEditor extends React.Component {
-    static navigationOptions = { title: "Essay"}
+class FilledInQuestionEditor extends React.Component {
+    static navigationOptions = { title: "Filled In"}
     constructor(props) {
         super(props)
         this.state = {
             title: '',
             description: '',
             points: 0,
+            variables: ''
         }
     }
     updateForm(newState) {
@@ -20,10 +21,7 @@ class EssayQuestionEditor extends React.Component {
     render() {
         return(
             <View>
-                <div className="row">
-                    <FormLabel>Title</FormLabel>
-                    <FormLabel>Points</FormLabel>
-                </div>
+                <FormLabel>Title</FormLabel>
                 <FormInput onChangeText={
                     text => this.updateForm({title: text})
                 }/>
@@ -39,7 +37,10 @@ class EssayQuestionEditor extends React.Component {
                     Description is required
                 </FormValidationMessage>
 
-                <textarea></textarea>
+                <FormLabel>FillInQuestion</FormLabel>
+                <FormInput onChangeText={
+                    text => this.updateForm({variables: text})
+                }/>
 
                 <Button	backgroundColor="blue"
                            color="white"
@@ -55,4 +56,4 @@ class EssayQuestionEditor extends React.Component {
     }
 }
 
-export default EssayQuestionEditor
+export default FilledInQuestionEditor

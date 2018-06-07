@@ -1,24 +1,29 @@
 import React, {Component} from 'react'
 import {View, Alert} from 'react-native'
 import {Text, ListItem} from 'react-native-elements'
+import ExamService from '../services/exam.service.client'
+import AssignService from '../services/assignment.service.client'
 
 class WidgetList extends Component {
     static navigationOptions = {title: 'Widgets'}
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             widgets: [],
             courseId: 1,
             moduleId: 1
         }
+        this.examService = ExamService.instance;
+        this.assignService = AssignService.instance;
     }
     componentDidMount() {
         const {navigation} = this.props;
         const lessonId = navigation.getParam("lessonId")
-        fetch("http://localhost:8080/api/lesson/"+lessonId+"/widget")
+        fetch("http://10.110.137.178:8080/api/lesson/"+lessonId+"/widget")
             .then(response => (response.json()))
             .then(widgets => this.setState({widgets}))
     }
+
     render() {
         return(
             <View style={{padding: 15}}>

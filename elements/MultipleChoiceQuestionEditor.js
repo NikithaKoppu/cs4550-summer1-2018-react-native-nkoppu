@@ -42,16 +42,18 @@ class MultipleChoiceQuestionEditor extends React.Component {
                     text => this.updateForm({options: text})
                 }/>
 
-                <Button	backgroundColor="green"
+                <Button	backgroundColor="blue"
                            color="white"
-                           title="Save"/>
+                           title="Submit"/>
                 <Button	backgroundColor="red"
                            color="white"
-                           title="Cancel"/>
+                           title="Cancel"
+                           onPress={() =>
+                               this.props.navigation.navigate("Questions")}/>
 
                 <Text h3>Preview</Text>
-                <Text h2>{this.state.title}</Text>
-                <Text>{this.state.description}</Text>
+                {this.state.options.map(option => (
+                    <input type="radio" name={option}> {option} </input>))}
 
             </View>
         )
