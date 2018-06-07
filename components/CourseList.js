@@ -9,7 +9,7 @@ class CourseList extends Component {
         this.state = {
             courses: []
         }
-        fetch('http://10.110.137.178:8080/api/course')
+        fetch('http://localhost:8080/api/course')
             .then(response => response.json())
             .catch(error => console.warn(error))
             .then(courses => {this.setState({courses: courses})

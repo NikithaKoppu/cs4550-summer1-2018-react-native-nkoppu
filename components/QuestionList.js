@@ -15,7 +15,7 @@ class QuestionList extends Component {
         const {navigation} = this.props;
         const examId = navigation.getParam("examId")
         //move to question.service.client
-        fetch("http://10.110.137.178:8080/api/exam/"+examId+"/question")
+        fetch("http://localhost:8080/api/exam/"+examId+"/question")
             .then(response => (response.json()))
             .then(questions => this.setState({questions}))
     }

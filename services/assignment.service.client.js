@@ -1,9 +1,9 @@
 import 'es6-symbol/implement'
 
 const WIDGET_API_URL =
-    'http://10.110.137.178:8080/api/lesson/LID/assignment';
+    'http://localhost:8080/api/lesson/LID/assignment';
 const ALL_WIDGETS_API_URL =
-    'http://10.110.137.178:8080/api/assignment';
+    'http://localhost:8080/api/assignment';
 
 let _singleton = Symbol();
 class AssignService {

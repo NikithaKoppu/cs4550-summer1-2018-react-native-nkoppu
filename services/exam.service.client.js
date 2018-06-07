@@ -3,7 +3,7 @@ import 'es6-symbol/implement'
 const WIDGET_API_URL =
     'http://10.110.137.178:8080/api/lesson/LID/exam';
 const ALL_WIDGETS_API_URL =
-    'http://10.110.137.178:8080/api/exam';
+    'http://localhost:8080/api/exam';
 
 let _singleton = Symbol();
 class ExamService {

@@ -1,7 +1,7 @@
 import 'es6-symbol/implement'
 
 let _singleton = Symbol();
-const EXAM_API_URL = 'http://10.110.137.178:8080/api/exam/EID';
+const EXAM_API_URL = 'http://localhost:8080/api/exam/EID';
 
 class QuestionService {
     constructor(singletonToken) {
@@ -22,7 +22,7 @@ class QuestionService {
     }
 
     deleteQuestion(quesId) {
-        return fetch("http://10.110.137.178:8080/api/question" + '/' + quesId,
+        return fetch("http://localhost:8080/api/question" + '/' + quesId,
             {
                 method: 'DELETE'
             }).then(function (response) {
